@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    position: relative;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    margin: 20px auto;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 50px;
+}
+
+.heart.liked {
+    background-color: red;
+    transform: scale(1.2) rotate(-45deg);
+}
+
+#message {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
